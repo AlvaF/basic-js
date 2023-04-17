@@ -16,7 +16,7 @@ function getSeason(date) {
     return 'Unable to determine the time of year!';
   }
 
-  if (Object.prototype.toString.call(date) !== '[object Date]') {
+  if (isNaN(date.getTime()) || Object.prototype.toString.call(date) !== '[object Date]') {
     throw new Error('Invalid date!');
   }
 
@@ -31,8 +31,6 @@ function getSeason(date) {
   } else {
     return 'autumn';
   }
-  // throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
 }
 
 module.exports = {
