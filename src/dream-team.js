@@ -14,13 +14,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(arr) {
-  // throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
   let answ = [];
-  if (typeof (arr) === 'object' || arr !== null) {
+  if (Array.isArray(arr)) {
     arr.forEach(element => {
-      if (typeof (element) === 'string') {
-        answ.push(element.trim().slice(0, 1))
+      if (typeof element === 'string' && element.trim() !== '') {
+        answ.push(element.trim().slice(0, 1));
       }
     });
   }
